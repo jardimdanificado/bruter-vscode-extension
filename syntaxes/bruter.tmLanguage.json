@@ -1,87 +1,99 @@
 {
-    "name": "Bruter",
-    "scopeName": "source.bruter",
-    "patterns": [
-      {
-        "include": "#variables"
-      },
-      {
-        "include": "#keywords"
-      },
-      {
-        "include": "#strings"
-      },
-      {
-        "include": "#numbers"
-      },
-      {
-        "include": "#comments"
-      },
-      {
-        "include": "#functions"
-      }
-    ],
-    "repository": {
-      "variables": {
-        "patterns": [
-          {
-            "name": "variable.other.bruter",
-            "match": "\\[a-zA-Z_][a-zA-Z0-9_]*"
-          }
-        ]
-      },
-      "keywords": {
-        "patterns": [
-          {
-            "name": "keyword.control.bruter",
-            "match": "\\b(if\\s*|set\\s*|edit\\s*|ifelse\\s*|if\\s*|not\\s*|while\\s*|or\\s*|and\\s*|return\\s*|hold\\s*|unhold\\s*|keep\\s*|clear\\s*|rebase\\s*|collect\\s*|#\\s*|change\\s*|delete\\s*|type\\s*|get\\s*|prototype|process|string|list)"
-          } 
-        ]
-      },
-      "strings": {
-        "patterns": [
-          {
-            "name": "string.quoted.single.bruter",
-            "begin": "\"",
-            "end": "\""
-          },
-          {
-            "name": "string.quoted.single.bruter",
-            "begin": "'",
-            "end": "'"
-          }
-          
-        ]
-      },
-      "numbers": {
-        "patterns": [
-          {
-            "name": "constant.numeric.bruter",
-            "match": "-?\\b\\d+\\b"
-          }
-        ]
-      },
-      "comments": {
-        "patterns": [
-          {
-            "name": "comment.line.double-slash.bruter",
-            "begin": "#",
-            "end": ";"
-          }
-        ]
-      },
-      "functions": {
-        "patterns": [
-          {
-
-            "name": "entity.name.function.bruter",
-            "match": "\\b(print\\s*|ls\\s*|size\\s*|eval\\s*)\\b"
-          }
-        ]
-      }
+  "name": "Bruter",
+  "scopeName": "source.bruter",
+  "patterns": [
+    {
+      "include": "#variables"
     },
-    "scopeName": "source.bruter",
-    "fileTypes": ["br"],
-    "uuid": "00000000-0000-0000-0000-000000000000"
-  }
-  
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#list_functions"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.bruter",
+          "match": "\\b(if|ifelse|not|while|or|return|list)\\b"
+        } 
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.bruter",
+          "begin": "\"",
+          "end": "\""
+        },
+        {
+          "name": "string.quoted.single.bruter",
+          "begin": "'",
+          "end": "'"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.bruter",
+          "match": "-?\\b\\d+\\b"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.bruter",
+          "begin": "//",
+          "end": ";"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function.bruter",
+          "match": "\\b(print|ls|size|eval)\\b"
+        },
+        {
+          "name": "entity.name.function.bruter",
+          "match": "#(rename|set|get|delete)"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.bruter",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*(?!:)\\b"
+        }
+      ]
+    },
+    "list_functions": {
+        "patterns": [
+          {
+            "name": "support.function.list.bruter",
+            "match": "\\b(pop|push|shift|unshift|reverse|insert|remove|split|swap|sub|replace|replace\\.all|get|set|len|find|concat):"
+          }
+        ]
+      }
+  },
+  "scopeName": "source.bruter",
+  "fileTypes": ["br"],
+  "uuid": "00000000-0000-0000-0000-000000000000"
+}
