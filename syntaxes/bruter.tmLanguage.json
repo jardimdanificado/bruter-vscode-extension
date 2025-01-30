@@ -19,20 +19,9 @@
     },
     {
       "include": "#functions"
-    },
-    {
-      "include": "#list_functions"
     }
   ],
   "repository": {
-    "keywords": {
-      "patterns": [
-        {
-          "name": "keyword.control.bruter",
-          "match": "\\b(if|ifelse|not|while|or|return|list)\\b"
-        } 
-      ]
-    },
     "strings": {
       "patterns": [
         {
@@ -68,11 +57,7 @@
       "patterns": [
         {
           "name": "entity.name.function.bruter",
-          "match": "\\b(print|ls|size|eval)\\b"
-        },
-        {
-          "name": "entity.name.function.bruter",
-          "match": "#(rename|set|get|delete)"
+          "match": "#(new|delete)"
         }
       ]
     },
@@ -84,11 +69,11 @@
         }
       ]
     },
-    "list_functions": {
+    "keywords": {
         "patterns": [
           {
-            "name": "support.function.list.bruter",
-            "match": "\\b(pop|push|shift|unshift|reverse|insert|remove|split|swap|sub|replace|replace\\.all|get|set|len|find|concat):"
+            "name": "keyword.control.bruter",
+            "match": "\\b(list|pop|push|shift|unshift|reverse|insert|remove|split|swap|sub|replace|replace\\.all|get|set|len|find|concat):"
           }
         ]
       }
