@@ -57,7 +57,7 @@
       "patterns": [
         {
           "name": "entity.name.function.bruter",
-          "match": "#(new|delete)"
+          "match": "#(new|delete|priority)"
         }
       ]
     },
